@@ -1,9 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { expect } from 'chai';
+import { mount } from 'enzyme';
+import { spy } from 'sinon';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+spy(App.prototype, 'componentWillMount');
+
+describe('<App />', () => {
+    it('calls componentWillMount', () => {
+        const wrapper = mount(<App />);
+        expect(App.prototype.componentWillMount).to.have.property('callCount', 1);
+    });
 });
