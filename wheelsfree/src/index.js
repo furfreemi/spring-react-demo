@@ -6,14 +6,14 @@ import NotFound from "./components/NotFound";
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import Home from "./components/Home";
 import Header from "./components/Header";
-import Item from "./components/Item";
+import ItemDetail from "./components/ItemDetail";
 
 const routing = (
     <Router>
-        <div>
         <Header />
+        <div>
         <Switch>
-            <Route path="/item/:id" component={Item}/>
+            <Route path="/item/:id" component={ItemDetail}/>
             <Route exact path="/" component={Home} />
             <Route component={NotFound} />
         </Switch>

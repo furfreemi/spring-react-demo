@@ -2,25 +2,38 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import api from '../api';
 import LoadingIndicator from "./LoadingIndicator";
+import ItemCard from "./ItemCard";
 
 class Home extends Component {
-    state = {
-        isLoading: true,
-        items: []
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isLoading: true,
+            items: []
+        };
+    }
 
     componentDidMount() {
         api.get('/items').then(response => {
-            this.setState({items: response.data});
-            this.setState({isLoading: false});
+            this.setState({
+                items: response.data.items,
+                isLoading: false
+            });
         });
     }
 
     render() {
-        return (<div>
+        return (<div style={{display: 'flex', justifyContent: 'center'}}>
             {this.state.isLoading ?
                 <LoadingIndicator/> :
-                this.state.items}
+                <div>
+                    {this.state.items.map(
+                        item => <ItemCard
+                            key={item.id}
+                            item={item}/>
+                    )}
+                </div>}
             </div>
         );
     }

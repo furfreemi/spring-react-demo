@@ -1,14 +1,13 @@
 import React from 'react';
-import { expect } from 'chai';
 import { mount } from 'enzyme';
 import { spy } from 'sinon';
-import App from './App';
+import Home from './Home';
 
-spy(App.prototype, 'componentWillMount');
+spy(Home.prototype, 'componentWillMount');
 
-describe('<App />', () => {
+describe('<Home />', () => {
     it('calls componentWillMount', () => {
-        const wrapper = mount(<App />);
-        expect(App.prototype.componentWillMount).to.have.property('callCount', 1);
+        const wrapper = mount(<Home />);
+        expect(Home.prototype.componentWillMount).to.have.property('callCount', 1);
     });
 });
