@@ -9,12 +9,8 @@ class Home extends Component {
         items: []
     };
 
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
-        const response = api.get('/items').then(response => {
+        api.get('/items').then(response => {
             this.setState({items: response.data});
             this.setState({isLoading: false});
         });

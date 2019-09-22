@@ -5,11 +5,15 @@ import * as serviceWorker from './serviceWorker';
 import NotFound from "./components/NotFound";
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import Home from "./components/Home";
+import Header from "./components/Header";
+import Item from "./components/Item";
 
 const routing = (
     <Router>
         <div>
+        <Header />
         <Switch>
+            <Route path="/item/:id" component={Item}/>
             <Route exact path="/" component={Home} />
             <Route component={NotFound} />
         </Switch>
