@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import NotFound from "./components/NotFound";
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import Home from "./components/Home";
 
 const routing = (
     <Router>
         <div>
         <Switch>
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={Home} />
             <Route component={NotFound} />
         </Switch>
         </div>
