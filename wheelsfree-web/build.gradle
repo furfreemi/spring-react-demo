@@ -16,9 +16,14 @@ test {
 	useJUnitPlatform()
 }
 
+task createDB(type: Exec) {
+	commandLine './db/create.sh'
+}
+
 dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.postgresql:postgresql:42.1.4'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mockito:mockito-core:3.0.0'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
