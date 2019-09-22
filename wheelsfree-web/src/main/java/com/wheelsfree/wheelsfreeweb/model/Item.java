@@ -1,5 +1,6 @@
 package com.wheelsfree.wheelsfreeweb.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,13 +15,16 @@ public class Item {
     private String description;
     private BigDecimal price;
     private Integer quantity;
+    @Column(name = "image_url")
+    private String imageUrl;
 
-    public Item(Long id, String name, String description, BigDecimal price, Integer quantity) {
+    public Item(Long id, String name, String description, BigDecimal price, Integer quantity, String imageUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
+        this.imageUrl = imageUrl;
     }
 
     public Item() {
@@ -45,5 +49,9 @@ public class Item {
 
     public Integer getQuantity() {
         return quantity;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 }

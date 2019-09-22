@@ -20,7 +20,7 @@ class ItemControllerTest {
     void shouldGetAllInStockItems() {
         ItemRepository itemRepositoryMock = mock(ItemRepository.class);
         List<Item> expectedItems = Collections.singletonList(
-            new Item(1L, "arbitrary", "a", BigDecimal.TEN, 10)
+            new Item(1L, "arbitrary", "a", BigDecimal.TEN, 10, "http://localhost")
         );
         when(itemRepositoryMock.findInStockItems()).thenReturn(expectedItems);
         ItemController itemController = new ItemController(itemRepositoryMock);

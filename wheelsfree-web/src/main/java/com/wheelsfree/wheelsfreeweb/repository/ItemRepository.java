@@ -12,5 +12,4 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     @Query("FROM Item WHERE quantity > 0")
     List<Item> findInStockItems();
-
 }
