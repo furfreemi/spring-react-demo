@@ -2,6 +2,7 @@ package com.wheelsfree.wheelsfreeweb.controller;
 
 import com.wheelsfree.wheelsfreeweb.model.Item;
 import com.wheelsfree.wheelsfreeweb.repository.ItemRepository;
+import com.wheelsfree.wheelsfreeweb.response.ItemsResponse;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -24,9 +25,9 @@ class ItemControllerTest {
         when(itemRepositoryMock.findInStockItems()).thenReturn(expectedItems);
         ItemController itemController = new ItemController(itemRepositoryMock);
 
-        List<Item> actualItems = itemController.getAllAvailableItems();
+        ItemsResponse actualItems = itemController.getAllAvailableItems();
 
-        assertThat(actualItems, is(expectedItems));
+        assertThat(actualItems.getItems(), is(expectedItems));
     }
 
 }

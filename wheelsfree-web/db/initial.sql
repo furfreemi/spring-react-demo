@@ -1,0 +1,1 @@
+INSERT INTO item VALUES (1, 'Initial Test Item', 'This is a description', 100.25, 25);
