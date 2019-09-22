@@ -1,7 +1,7 @@
 package com.wheelsfree.wheelsfreeweb.controller;
 
 import com.wheelsfree.wheelsfreeweb.model.Item;
-import com.wheelsfree.wheelsfreeweb.service.ItemService;
+import com.wheelsfree.wheelsfreeweb.repository.ItemRepository;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -16,13 +16,13 @@ import static org.mockito.Mockito.when;
 class ItemControllerTest {
 
     @Test
-    void shouldGetAllInStockItemsFromService() {
-        ItemService itemService = mock(ItemService.class);
+    void shouldGetAllInStockItems() {
+        ItemRepository itemRepositoryMock = mock(ItemRepository.class);
         List<Item> expectedItems = Collections.singletonList(
             new Item(1L, "arbitrary", "a", BigDecimal.TEN, 10)
         );
-        when(itemService.getAllAvailableItems()).thenReturn(expectedItems);
-        ItemController itemController = new ItemController(itemService);
+        when(itemRepositoryMock.findInStockItems()).thenReturn(expectedItems);
+        ItemController itemController = new ItemController(itemRepositoryMock);
 
         List<Item> actualItems = itemController.getAllAvailableItems();
 
