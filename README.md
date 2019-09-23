@@ -1,10 +1,12 @@
 ## WheelsFree dojo application
 
 WheelsFree is a drone e-commerce site built using a React frontend and Spring Boot backend. 
-This application relies on a PostGres database.
+This application relies on a Postgres database. Postgres must be running in order to run this application.
 
 To create the database (only needs to be run 1 time only), in the wheelsfree-bff directory: `./gradlew createDB`
+
 To start backend, in the wheelsfree-bff directory: `./gradlew bootRun`
+
 To start frontend, in the wheelsfree directory: `yarn start`
 
 Extensions:
