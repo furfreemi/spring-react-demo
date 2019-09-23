@@ -2,7 +2,6 @@ import React from 'react';
 import {mount, shallow} from 'enzyme';
 import { spy } from 'sinon';
 import ItemCard from './ItemCard';
-import Button from "@material-ui/core";
 import {BrowserRouter} from "react-router-dom";
 
 describe('<ItemCard />', () => {
