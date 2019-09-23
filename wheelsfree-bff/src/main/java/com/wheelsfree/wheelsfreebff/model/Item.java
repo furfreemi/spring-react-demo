@@ -1,4 +1,4 @@
-package com.wheelsfree.wheelsfreeweb.model;
+package com.wheelsfree.wheelsfreebff.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,8 +1,8 @@
-package com.wheelsfree.wheelsfreeweb.controller;
+package com.wheelsfree.wheelsfreebff.controller;
 
-import com.wheelsfree.wheelsfreeweb.model.Item;
-import com.wheelsfree.wheelsfreeweb.repository.ItemRepository;
-import com.wheelsfree.wheelsfreeweb.response.ItemsResponse;
+import com.wheelsfree.wheelsfreebff.model.Item;
+import com.wheelsfree.wheelsfreebff.repository.ItemRepository;
+import com.wheelsfree.wheelsfreebff.response.ItemsResponse;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

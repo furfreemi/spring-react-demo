@@ -1,6 +1,6 @@
-package com.wheelsfree.wheelsfreeweb.response;
+package com.wheelsfree.wheelsfreebff.response;
 
-import com.wheelsfree.wheelsfreeweb.model.Item;
+import com.wheelsfree.wheelsfreebff.model.Item;
 
 import java.util.List;
 

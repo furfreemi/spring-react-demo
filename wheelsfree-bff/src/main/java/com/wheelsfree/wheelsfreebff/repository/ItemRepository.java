@@ -1,6 +1,6 @@
-package com.wheelsfree.wheelsfreeweb.repository;
+package com.wheelsfree.wheelsfreebff.repository;
 
-import com.wheelsfree.wheelsfreeweb.model.Item;
+import com.wheelsfree.wheelsfreebff.model.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

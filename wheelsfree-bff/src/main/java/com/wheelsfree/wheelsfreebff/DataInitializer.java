@@ -1,7 +1,7 @@
-package com.wheelsfree.wheelsfreeweb;
+package com.wheelsfree.wheelsfreebff;
 
-import com.wheelsfree.wheelsfreeweb.model.Item;
-import com.wheelsfree.wheelsfreeweb.repository.ItemRepository;
+import com.wheelsfree.wheelsfreebff.model.Item;
+import com.wheelsfree.wheelsfreebff.repository.ItemRepository;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;

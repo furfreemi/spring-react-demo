@@ -1,4 +1,4 @@
-package com.wheelsfree.wheelsfreeweb;
+package com.wheelsfree.wheelsfreebff;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

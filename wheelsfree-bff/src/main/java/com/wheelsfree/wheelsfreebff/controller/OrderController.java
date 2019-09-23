@@ -1,6 +1,6 @@
-package com.wheelsfree.wheelsfreeweb.controller;
+package com.wheelsfree.wheelsfreebff.controller;
 
-import com.wheelsfree.wheelsfreeweb.model.Order;
+import com.wheelsfree.wheelsfreebff.model.Order;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
