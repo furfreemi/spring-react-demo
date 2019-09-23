@@ -7,6 +7,10 @@ This is a React frontend application (it does not use Redux), with tests utilizi
 
 In the project directory, you can run:
 
+### `yarn install`
+
+Install necessary dependencies.
+
 ### `yarn start`
 
 Runs the app in the development mode.<br>
