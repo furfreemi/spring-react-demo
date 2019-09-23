@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Front end for the WheelsFree demo application. Relies on the backend API running on port 8080.
+This is a React frontend application (it does not use Redux), with tests utilizing Jest and Enzyme.
 
 ## Available Scripts
 
