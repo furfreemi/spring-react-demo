@@ -1,13 +1,33 @@
 import React, { Component } from 'react';
 import '../css/App.css';
+import { TextField } from "@material-ui/core";
 
 class ItemDetail extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: '',
+            email: ''
+        }
+    }
+
+    handleNameChange = (event) => {
+        this.setState({name: event.target.value})
+    };
 
     render() {
         const { id: itemId } = this.props.match.params;
         return (
             <div>
-                {itemId}
+                Currently viewing item {itemId}
+
+                <TextField
+                    required
+                    label="Name"
+                    value={this.state.name}
+                    onChange={this.handleNameChange}
+                />
             </div>
         );
     }
