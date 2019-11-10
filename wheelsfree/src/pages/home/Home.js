@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../css/App.css';
-import api from '../api';
-import LoadingIndicator from "./LoadingIndicator";
-import ItemCard from "./ItemCard";
+import '../../css/App.css';
+import api from '../../api';
+import LoadingIndicator from "../../components/LoadingIndicator";
+import ItemCard from "../../components/ItemCard";
 
 class Home extends Component {
     constructor(props) {
@@ -25,15 +25,15 @@ class Home extends Component {
 
     render() {
         return (<div style={{display: 'flex', justifyContent: 'center'}}>
-            {this.state.isLoading ?
-                <LoadingIndicator/> :
-                <div>
-                    {this.state.items.map(
-                        item => <ItemCard
-                            key={item.id}
-                            item={item}/>
-                    )}
-                </div>}
+                {this.state.isLoading ?
+                    <LoadingIndicator/> :
+                    <div>
+                        {this.state.items.map(
+                            item => <ItemCard
+                                key={item.id}
+                                item={item}/>
+                        )}
+                    </div>}
             </div>
         );
     }

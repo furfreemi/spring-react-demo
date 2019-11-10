@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../../css/App.css';
 import { TextField } from "@material-ui/core";
 
 class ItemDetail extends Component {

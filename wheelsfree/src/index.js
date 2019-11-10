@@ -4,9 +4,9 @@ import './css/index.css';
 import * as serviceWorker from './serviceWorker';
 import NotFound from "./components/NotFound";
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
-import Home from "./components/Home";
+import Home from "./pages/home/Home";
 import Header from "./components/Header";
-import ItemDetail from "./components/ItemDetail";
+import ItemDetail from "./pages/itemDetail/ItemDetail";
 
 const routing = (
     <Router>

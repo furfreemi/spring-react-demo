@@ -2,9 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { spy, spyOn } from 'sinon';
 import Home from './Home';
-import api from '../api'
-import ItemCard from './ItemCard'
-import {BrowserRouter} from "react-router-dom";
+import api from '../../api'
+import ItemCard from '../../components/ItemCard'
+import { BrowserRouter } from "react-router-dom";
 
 jest.mock("../api");
 
