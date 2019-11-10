@@ -9,31 +9,41 @@ class Home extends Component {
         super(props);
 
         this.state = {
-            isLoading: true,
+            isLoading: false,
             items: []
         };
     }
 
     componentDidMount() {
-        api.get('/items').then(response => {
-            this.setState({
-                items: response.data.items,
-                isLoading: false
-            });
-        });
+        this.setState({isLoading: true}, () => {
+                api.get('/items').then(response => {
+                    this.setState({
+                        items: response.data.items,
+                        isLoading: false
+                    });
+                }).finally(() => {
+                    this.setState({
+                        isLoading: false
+                    })
+                })
+            }
+        )
     }
 
     render() {
-        return (<div style={{display: 'flex', justifyContent: 'center'}}>
+        return (
+            <div>
                 {this.state.isLoading ?
                     <LoadingIndicator/> :
                     <div>
-                        {this.state.items.map(
-                            item => <ItemCard
+                        {this.state.items.map(item =>
+                            <ItemCard
                                 key={item.id}
-                                item={item}/>
+                                item={item}
+                            />
                         )}
-                    </div>}
+                    </div>
+                }
             </div>
         );
     }

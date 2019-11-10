@@ -1,8 +1,8 @@
 import React from 'react';
 import '../css/App.css';
 import PropTypes from "prop-types";
-import {withRouter} from 'react-router-dom';
-import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@material-ui/core";
+import { withRouter } from 'react-router-dom';
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@material-ui/core";
 
 const ItemCard = props => {
     const { id, name, description, imageUrl, price } = props.item;
@@ -12,14 +12,14 @@ const ItemCard = props => {
     };
 
     return (
-        <Card style={{margin: '50px'}}>
+        <Card style={{ margin: '50px' }}>
             <CardMedia
-                style={{width: '600px', maxHeight: '250px'}}
+                style={{ margin: '0 auto', width: '600px', maxHeight: '250px' }}
                 component='img'
                 src={imageUrl}
             />
 
-            <CardContent style={{textAlign: 'center'}}>
+            <CardContent style={{ textAlign: 'center' }}>
                 <Typography variant="h5">
                     {name}
                 </Typography>
@@ -28,7 +28,7 @@ const ItemCard = props => {
                 </Typography>
             </CardContent>
 
-            <CardActions style={{paddingBottom: '16px', display: 'flex', justifyContent: 'center'}}>
+            <CardActions style={{ paddingBottom: '16px', display: 'flex', justifyContent: 'center' }}>
                 <Button
                     variant="outlined"
                     size="large"
