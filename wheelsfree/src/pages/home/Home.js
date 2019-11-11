@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import '../../css/App.css';
-import api from '../../api';
+import { getAllItems } from '../../api/item';
 import LoadingIndicator from "../../components/LoadingIndicator";
 import ItemCard from "../../components/ItemCard";
 
 class Home extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             isLoading: false,
             items: []
@@ -15,17 +14,12 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.setState({isLoading: true}, () => {
-                api.get('/items').then(response => {
-                    this.setState({
-                        items: response.data.items,
-                        isLoading: false
-                    });
-                }).finally(() => {
-                    this.setState({
-                        isLoading: false
-                    })
-                })
+        this.setState({ isLoading: true }, async () => {
+                const data = await getAllItems();
+                this.setState({
+                    items: data.items,
+                    isLoading: false
+                });
             }
         )
     }
@@ -35,14 +29,14 @@ class Home extends Component {
             <div>
                 {this.state.isLoading ?
                     <LoadingIndicator/> :
-                    <div>
+                    <>
                         {this.state.items.map(item =>
                             <ItemCard
                                 key={item.id}
                                 item={item}
                             />
                         )}
-                    </div>
+                    </>
                 }
             </div>
         );

@@ -1,5 +1,6 @@
 import axios from 'axios';
 
-export default axios.create({
-    baseURL: 'http://localhost:8080/'
-});
+const baseURL = 'http://localhost:8080/'
+const getAllItems = () => axios.get(baseURL + '/items');
+
+export { getAllItems }
