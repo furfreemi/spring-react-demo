@@ -19,14 +19,15 @@ describe('<Home />', () => {
     // mockResolvedValue
     it("should fetches data from api items when Home mounted", (done) => {
         // mock
-        // mockAxios.get.mockImplementationOnce(() =>
-        //     Promise.resolve({
-        //         data: { items: [buildItem(1), buildItem(2), buildItem(3)] }
-        //     })
-        // );
-        mockAxios.get.mockResolvedValue({
-            data: { items: [buildItem(1), buildItem(2), buildItem(3)] }
-        })
+        mockAxios.get.mockImplementationOnce(() =>
+            Promise.resolve({
+                data: { items: [buildItem(1), buildItem(2), buildItem(3)] }
+            })
+        ).mockImplementationOnce(() =>
+            Promise.resolve({
+                data: { items: [buildItem(4)] }
+            })
+        )
 
         //mount
         const wrapper = mount(
@@ -36,17 +37,18 @@ describe('<Home />', () => {
         );
 
         // expect
-        expect(mockAxios.get).toHaveBeenCalledTimes(1);
-        expect(mockAxios.get).toHaveBeenCalledWith(baseURL + '/items');
-
         setTimeout(() => {
             wrapper.update();
+            expect(mockAxios.get).toHaveBeenCalledTimes(2);
+            expect(mockAxios.get.mock.calls[0]).toEqual([baseURL + '/items']);
+            expect(mockAxios.get.mock.calls[1]).toEqual([baseURL + '/items2']);
+            // expect(mockAxios.get).toHaveBeenCalledWith(baseURL + '/items2');
             expect(wrapper.find('ItemCard').length).toEqual(3);
             done()
-        }, 1000)
+        }, 100)
     });
 
-    it('should render a card for each item', done => {
+    it.skip('should render a card for each item', done => {
         const mockedGetItems = () => Promise.resolve({
             data: {
                 items: [

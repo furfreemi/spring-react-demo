@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../css/App.css';
-import { getAllItems } from '../../api/item';
+import { getAllItems, getAllItems2 } from '../../api/item';
 import LoadingIndicator from "../../components/LoadingIndicator";
 import ItemCard from "../../components/ItemCard";
 
@@ -16,6 +16,7 @@ class Home extends Component {
     componentDidMount() {
         this.setState({ isLoading: true }, async () => {
                 const data = await getAllItems();
+                let data2 = await getAllItems2();
                 this.setState({
                     items: data.items,
                     isLoading: false

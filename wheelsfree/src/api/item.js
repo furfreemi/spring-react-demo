@@ -2,8 +2,21 @@ import axios from 'axios';
 import baseURL from "./base";
 
 const getAllItems = async () => {
-    const response = await axios.get(baseURL + '/items');
-    return response.data;
+    try {
+        const response = await axios.get(baseURL + '/items');
+        return response.data
+    } catch (e) {
+        return null
+    }
 }
 
-export { getAllItems }
+const getAllItems2 = async () => {
+    try {
+        const response = await axios.get(baseURL + '/items2');
+        return response.data
+    } catch (e) {
+        return null
+    }
+}
+
+export { getAllItems, getAllItems2 }
