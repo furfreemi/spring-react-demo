@@ -17,7 +17,7 @@ const buildItem = (id) => ({
 
 describe('<Home />', () => {
     // mockResolvedValue
-    it("should fetches data from api items when Home mounted", (done) => {
+    it("should fetches item from items api and render items when Home mounted", (done) => {
         // mock
         mockAxios.get.mockImplementationOnce(() =>
             Promise.resolve({
@@ -46,33 +46,5 @@ describe('<Home />', () => {
             expect(wrapper.find('ItemCard').length).toEqual(3);
             done()
         }, 100)
-    });
-
-    it.skip('should render a card for each item', done => {
-        const mockedGetItems = () => Promise.resolve({
-            data: {
-                items: [
-                    buildItem(14), buildItem(15), buildItem(16)
-                ]
-            }
-        });
-
-        let promise;
-        api.get = () => {
-            promise = Promise.resolve().then(mockedGetItems);
-            return promise;
-        };
-
-        const wrapper = mount(
-            <BrowserRouter>
-                <Home/>
-            </BrowserRouter>
-        );
-
-        promise.then(() => {
-            wrapper.update();
-            expect(wrapper.find('ItemCard').length).toEqual(3);
-            done();
-        });
     });
 });
