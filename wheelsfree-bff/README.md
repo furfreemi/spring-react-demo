@@ -7,7 +7,7 @@ This application serves as a backend API for the WheelsFree frontend.
 
 In the project directory, you can run:
 
-### `./gradlew initDb`
+#### `./gradlew initDb`
 
 Creates the database and runs all migrations. Note that this will drop the database and recreate it if a 'wheelsfree' 
 PostGres database already exists.
@@ -16,6 +16,14 @@ PostGres database already exists.
 
 Starts the application on port 8080. 
 
-### `./gradlew test`
+#### `./gradlew test`
 
 Runs unit tests.
+
+#### `./gradlew integrationTest`
+
+Runs integration tests. Note: this runs database migrations beforehand.
+
+#### `./gradlew check`
+
+Runs all tests.
