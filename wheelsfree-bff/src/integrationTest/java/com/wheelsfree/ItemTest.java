@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wheelsfree.mapper.ItemMapper;
 import com.wheelsfree.model.Item;
 import com.wheelsfree.response.ItemsResponse;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -37,19 +36,15 @@ class ItemTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    private List<Item> expectedItems;
 
-    @BeforeEach
-     void init() {
-        expectedItems = Arrays.asList(
+    @Test
+    void shouldReturnAllItems() throws Exception {
+        List<Item> expectedItems = Arrays.asList(
                 new Item(1, "arbitrary1", "arbitrary description 1", BigDecimal.TEN, 10L, "arbitraryUrl1"),
                 new Item(2, "arbitrary2", "arbitrary description 2", BigDecimal.ONE, 20L, "arbitraryUrl2")
         );
         when(itemMapper.findInStockItems()).thenReturn(expectedItems);
-    }
 
-    @Test
-    void shouldReturnAllItems() throws Exception {
         MockHttpServletResponse response =
                 mockMvc.perform(get("/items"))
                     .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
