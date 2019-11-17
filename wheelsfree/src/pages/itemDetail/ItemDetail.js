@@ -17,7 +17,7 @@ class ItemDetail extends Component {
     };
 
     render() {
-        const { id: itemId } = this.props.match.params;
+        const itemId = this.props.match.params.id;
         return (
             <div>
                 Currently viewing item {itemId}
