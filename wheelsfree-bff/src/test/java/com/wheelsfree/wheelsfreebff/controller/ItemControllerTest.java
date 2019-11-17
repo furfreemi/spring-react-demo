@@ -1,7 +1,7 @@
 package com.wheelsfree.wheelsfreebff.controller;
 
+import com.wheelsfree.wheelsfreebff.mapper.ItemMapper;
 import com.wheelsfree.wheelsfreebff.model.Item;
-import com.wheelsfree.wheelsfreebff.repository.ItemRepository;
 import com.wheelsfree.wheelsfreebff.response.ItemsResponse;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +18,9 @@ class ItemControllerTest {
 
     @Test
     void shouldGetAllInStockItems() {
-        ItemRepository itemRepositoryMock = mock(ItemRepository.class);
+        ItemMapper itemRepositoryMock = mock(ItemMapper.class);
         List<Item> expectedItems = Collections.singletonList(
-            new Item(1L, "arbitrary", "a", BigDecimal.TEN, 10, "http://localhost")
+            new Item(1, "arbitrary", "a", BigDecimal.TEN, 10L, "http://localhost")
         );
         when(itemRepositoryMock.findInStockItems()).thenReturn(expectedItems);
         ItemController itemController = new ItemController(itemRepositoryMock);

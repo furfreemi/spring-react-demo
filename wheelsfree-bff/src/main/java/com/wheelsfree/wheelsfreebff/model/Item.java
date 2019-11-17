@@ -1,24 +1,16 @@
 package com.wheelsfree.wheelsfreebff.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Entity
 public class Item {
-    @Id
-    @GeneratedValue
-    private Long id;
+    private Integer id;
     private String name;
     private String description;
     private BigDecimal price;
-    private Integer quantity;
-    @Column(name = "image_url")
+    private Long quantity;
     private String imageUrl;
 
-    public Item(Long id, String name, String description, BigDecimal price, Integer quantity, String imageUrl) {
+    public Item(Integer id, String name, String description, BigDecimal price, Long quantity, String imageUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -27,11 +19,7 @@ public class Item {
         this.imageUrl = imageUrl;
     }
 
-    public Item() {
-
-    }
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -47,7 +35,7 @@ public class Item {
         return price;
     }
 
-    public Integer getQuantity() {
+    public Long getQuantity() {
         return quantity;
     }
 
