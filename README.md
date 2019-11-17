@@ -7,7 +7,7 @@ To initialize the database (only needs to be run 1 time only), in the wheelsfree
 
 To start backend, in the wheelsfree-bff directory: `./gradlew bootRun`
 
-To start frontend, in the wheelsfree directory: `yarn start`
+To start frontend, in the wheelsfree directory: `npm start`
 
 Extensions:
 - Currently, when a user selects 'Reserve' on an item, they are redirected to a blank page. Implement an endpoint in the BFF so that the application can retrieve item details for the item selected. Then, display these details to the user. 
