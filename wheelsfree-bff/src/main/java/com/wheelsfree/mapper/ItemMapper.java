@@ -1,6 +1,6 @@
-package com.wheelsfree.wheelsfreebff.mapper;
+package com.wheelsfree.mapper;
 
-import com.wheelsfree.wheelsfreebff.model.Item;
+import com.wheelsfree.model.Item;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

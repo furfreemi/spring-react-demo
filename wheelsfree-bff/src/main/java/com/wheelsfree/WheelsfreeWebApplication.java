@@ -1,4 +1,4 @@
-package com.wheelsfree.wheelsfreebff;
+package com.wheelsfree;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

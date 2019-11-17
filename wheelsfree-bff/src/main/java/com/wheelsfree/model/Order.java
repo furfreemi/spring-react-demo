@@ -1,4 +1,4 @@
-package com.wheelsfree.wheelsfreebff.model;
+package com.wheelsfree.model;
 
 public class Order {
     // TODO implement

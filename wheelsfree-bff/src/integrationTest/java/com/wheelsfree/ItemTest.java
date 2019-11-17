@@ -1,9 +1,9 @@
-package com.wheelsfree.wheelsfreebff;
+package com.wheelsfree;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wheelsfree.wheelsfreebff.mapper.ItemMapper;
-import com.wheelsfree.wheelsfreebff.model.Item;
-import com.wheelsfree.wheelsfreebff.response.ItemsResponse;
+import com.wheelsfree.mapper.ItemMapper;
+import com.wheelsfree.model.Item;
+import com.wheelsfree.response.ItemsResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

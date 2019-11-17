@@ -1,4 +1,4 @@
-package com.wheelsfree.wheelsfreebff.model;
+package com.wheelsfree.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;

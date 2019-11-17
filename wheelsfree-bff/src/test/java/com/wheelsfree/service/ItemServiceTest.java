@@ -1,7 +1,7 @@
-package com.wheelsfree.wheelsfreebff.service;
+package com.wheelsfree.service;
 
-import com.wheelsfree.wheelsfreebff.mapper.ItemMapper;
-import com.wheelsfree.wheelsfreebff.model.Item;
+import com.wheelsfree.mapper.ItemMapper;
+import com.wheelsfree.model.Item;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

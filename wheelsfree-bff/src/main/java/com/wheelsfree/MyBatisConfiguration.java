@@ -1,4 +1,4 @@
-package com.wheelsfree.wheelsfreebff;
+package com.wheelsfree;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -13,7 +13,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.wheelsfree.wheelsfreebff.mapper")
+@MapperScan("com.wheelsfree.mapper")
 @PropertySource("classpath:database.properties")
 public class MyBatisConfiguration {
 
