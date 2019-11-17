@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
     @PostMapping("/orders")
-    public Order createQuestion(@RequestBody Order order) {
+    public Order createOrder(@RequestBody Order order) {
         throw new UnsupportedOperationException("Method not yet implemented");
     }
 
