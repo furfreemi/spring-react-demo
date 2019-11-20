@@ -1,5 +1,12 @@
 ## WheelsFree dojo application
 
+Dockerizing instructions- to run applications:
+- From wheelsfree: run `npm run-script build`
+- From wheelsfree-bff: run `./gradlew bootJar`
+- Run `docker-compose build --no-cache`
+- Run `docker-compose up`
+- Visit `localhost:8081`
+
 WheelsFree is a drone e-commerce site built using a React frontend and Spring Boot backend. 
 This application relies on a Postgres database. Postgres must be running in order to run this application.
 
@@ -16,9 +23,4 @@ Extensions:
 - Don't forget to decrement quantity for an ordered item, and display a success page to the user when they've successfully reserved an item!
 
 
-Dockerizing instructions- to run applications:
-- From wheelsfree: run `npm run-script build`
-- From wheelsfree-bff: run `./gradlew bootJar`
-- Run `docker-compose build --no-cache`
-- Run `docker-compose up`
-- Visit `localhost:8081`
+
