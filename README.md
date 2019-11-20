@@ -14,3 +14,11 @@ Extensions:
 - Add form elements for collecting user information on item details page. User information to be collected: name and email address.
 - Add persistent 'order' functionality: add a submit button on the item details page, that calls an endpoint in the BFF that takes in the user's name and email and item ID. This endpoint should persist all details in some sort of order object. Think: how might we want to model these orders in the backend so we could eventually support multi-item orders? 
 - Don't forget to decrement quantity for an ordered item, and display a success page to the user when they've successfully reserved an item!
+
+
+Dockerizing instructions- to run applications:
+- From wheelsfree: run `npm run-script build`
+- From wheelsfree-bff: run `./gradlew bootJar`
+- Run `docker-compose build --no-cache`
+- Run `docker-compose up`
+- Visit `localhost:8081`

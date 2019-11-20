@@ -1,0 +1,47 @@
+version: "3"
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=wheelsfree
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/demo_data
+    networks:
+      container-network:
+        aliases: 
+          - postgres
+
+  mybatis:
+    container_name: mybatis
+    build:
+      context: ./wheelsfree-bff/db
+    volumes:
+      - ./migrations:/opt/migrations
+    networks:
+      - "container-network"
+
+  api:
+    container_name: api
+    build:
+      context: ./wheelsfree-bff
+      args:
+        JAR_FILE: "build/libs/wheelsfree-bff-0.0.1.jar"
+    ports:
+      - "8080:8080"
+    networks:
+      - "container-network"
+   
+  reactapp:
+    container_name: reactapp
+    build:
+      context: ./wheelsfree/
+    ports:
+      - "8081:80"
+    networks:
+      - "container-network" 
+
+networks:
+  container-network:
