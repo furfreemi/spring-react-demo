@@ -6,10 +6,11 @@ if [ "$ENV" = "" ]; then
 fi
 
 sleep 6
+echo "Running migrations in $ENV..."
 ATTEMPTS=0
 ./mybatis/bin/migrate up
 while [[ $? -ne 0 && $ATTEMPTS -lt 3 ]]; do
-    sleep 6
+    sleep 5
     ATTEMPTS=$[$ATTEMPTS+1]
     ./mybatis/bin/migrate up --env=$ENV
 done
