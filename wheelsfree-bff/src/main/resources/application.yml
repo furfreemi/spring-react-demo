@@ -1,0 +1,5 @@
+datasource:
+  url: jdbc:postgresql://localhost:5432/wheelsfree
+  username: postgres
+  password: postgres
+  driver: org.postgresql.Driver
